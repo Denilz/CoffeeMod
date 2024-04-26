@@ -1,29 +1,71 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View, TextInput } from 'react-native';
 import { useNavigation } from '@react-navigation/core';
 import { auth } from '../firebase';
+import { doc, setDoc, getDoc, updateDoc } from 'firebase/firestore';
+import { db } from '../firebase';
 
 const HomeScreen = () => {
   const navigation = useNavigation();
   const [dailyLimit, setDailyLimit] = useState('');
-  const [coffeeToday, setCoffeeToday] = useState(0);
+  const [loading, setLoading] = useState(true);
 
-  const handleSubmit = () => {
-    if (dailyLimit.trim() !== '') {
-      setCoffeeToday(0); // Reset coffee count when daily limit is submitted
-      navigation.navigate('Dashboard', { dailyLimit: parseInt(dailyLimit.trim()) });
-    }
-  }
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        if (!auth.currentUser) {
+          console.error('User not authenticated.');
+          return;
+        }
 
-  const handleAddCoffee = () => {
-    if (coffeeToday < parseInt(dailyLimit)) {
-      setCoffeeToday(coffeeToday + 1);
-      if (coffeeToday + 1 === parseInt(dailyLimit)) {
-        alert("Coffee limit reached");
+        const docRef = doc(db, 'test', auth.currentUser.uid);
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+          // If document exists, navigate to Dashboard with stored dailyLimit
+          const data = docSnap.data();
+          navigation.navigate('Dashboard', { dailyLimit: data.dailyLimit });
+        } else {
+          // If document doesn't exist, set loading to false
+          setLoading(false);
+        }
+      } catch (error) {
+        console.error('Error fetching document:', error);
       }
-    } else {
-      alert("Coffee limit reached");
+    };
+
+    fetchData();
+  }, []);
+
+  const handleSubmit = async () => {
+    if (dailyLimit.trim() !== '') {
+      try {
+        if (!auth.currentUser) {
+          console.error('User not authenticated.');
+          return;
+        }
+
+        const docRef = doc(db, 'test', auth.currentUser.uid);
+        const docSnap = await getDoc(docRef);
+
+        if (!docSnap.exists()) {
+          // If document doesn't exist, create a new one with dailyLimit and TodayCoffee both set to 0
+          await setDoc(docRef, { dailyLimit: parseInt(dailyLimit.trim()), TodayCoffee: 0 });
+        } else {
+          // If document exists, update the dailyLimit
+          const newDailyLimit = parseInt(dailyLimit.trim());
+          await updateDoc(docRef, { dailyLimit: newDailyLimit });
+        }
+
+        navigation.navigate('Dashboard', { dailyLimit: parseInt(dailyLimit.trim()) });
+      } catch (error) {
+        console.error('Error setting document:', error);
+      }
     }
+  };
+
+  if (loading) {
+    return <Text>Loading...</Text>;
   }
 
   return (
