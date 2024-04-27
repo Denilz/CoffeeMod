@@ -9,7 +9,8 @@ while making sure you're not exceeding your daily limit.
 App Includes:
 
 - User Authentication (Register/Login):
-![WhatsApp Image 2024-04-27 at 16 38 08](https://github.com/Denilz/CoffeeMod/assets/97263456/cea6ba63-592b-4e2e-90e3-6bf0f0cd3e7b)
+<img src="https://github.com/Denilz/CoffeeMod/assets/97263456/cea6ba63-592b-4e2e-90e3-6bf0f0cd3e7b" width="300" height="200" alt="User Authentication">
+
 
 - Database: Firebase:
 ![Untitled 3](https://github.com/Denilz/CoffeeMod/assets/97263456/39fddd4d-2015-4b2a-ae86-e28773f46482)
