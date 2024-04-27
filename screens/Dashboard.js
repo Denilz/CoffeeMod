@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View, Image } from 'react-native';
 import { doc, getDoc, setDoc, updateDoc } from 'firebase/firestore';
 import { db, auth } from '../firebase';
+
+// Import the coffee blur image
+import coffeeBlurImage from '../images/coffeeblur.png';
 
 const Dashboard = ({ route }) => {
   const { dailyLimit } = route.params;
@@ -56,9 +59,10 @@ const Dashboard = ({ route }) => {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Daily coffee limit: {dailyLimit}</Text>
-      <Text style={styles.text}>Today coffee amount: {coffeeAmount}</Text>
+    <View style={[styles.container, { backgroundColor: '#FFFEFF' }]}>
+      <Image source={coffeeBlurImage} style={styles.image} />
+      <Text style={styles.text}>You've drank today:</Text>
+      <Text style={styles.bigText}>{`${coffeeAmount}/${dailyLimit}`} <Text style={styles.smallText}>coffees.</Text></Text>
       {limitReached && <Text style={styles.limitReachedText}>Daily coffee limit reached!</Text>}
       <TouchableOpacity onPress={handleAddCoffee} style={styles.addButton}>
         <Text style={styles.buttonText}>+</Text>
@@ -76,12 +80,27 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 20,
   },
+  image: {
+    width: 200,
+    height: 200,
+    // marginBottom: 40,
+  },
   text: {
-    fontSize: 18,
+    marginTop: 40,
+    marginBottom: 10,
+    fontSize: 32,
+  },
+  bigText: {
+    fontSize: 140,
+    fontWeight: 'bold',
     marginBottom: 20,
+    color: '#2E0E02',
+  },
+  smallText: {
+    fontSize: 12,
   },
   addButton: {
-    backgroundColor: '#0782F9',
+    backgroundColor: '#2E0E02',
     borderRadius: 20,
     width: 50,
     height: 50,
@@ -96,7 +115,7 @@ const styles = StyleSheet.create({
   limitReachedText: {
     color: 'red',
     fontSize: 16,
-    marginTop: 10,
+    // marginTop: 10,
+    marginBottom: 20,
   },
 });
-// test

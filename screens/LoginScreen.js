@@ -51,7 +51,7 @@ useEffect(() => {
         <View style={styles.content}>
           {/* Nested ImageBackground for the secondary image */}
           <ImageBackground source={require('../images/coffeetime.png')} style={styles.secondaryImage} >
-            <Text style={[styles.secondaryText, { fontFamily: 'Trebuchet MS' }]}>CoffeeMod</Text>
+            <Text style={[styles.secondaryText, { fontFamily: 'Trebuchet MS'}]}>CoffeeMod</Text>
             <Text style={[styles.paragraph, { fontFamily: 'Avenir' }]}>Tracking your coffee daily intake</Text>
           </ImageBackground>
 
@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
     alignItems: 'center', // Center content horizontally
   },
   button: {
-    backgroundColor: '#0782F9',
+    backgroundColor: '#2E0E02',
     width: '60%', // Adjust button width as needed
     padding: 15,
     borderRadius: 10,
@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
   },
   buttonOutline: {
     backgroundColor: 'white',
-    borderColor: '#0782F9',
+    borderColor: '#2E0E02',
     borderWidth: 2,
   },
   buttonText: {
@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   buttonOutlineText: {
-    color: '#0782F9',
+    color: '#2E0E02',
     fontWeight: '700',
     fontSize: 16,
   },
@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
     marginBottom: 20, // Add space between the image and the text
   },
   secondaryText: {
-    color: '#CBC5EA',
+    color: '#2E0E02',
     fontSize: 52,
     fontWeight: 'bold',
     textAlign: 'center',
@@ -167,7 +167,7 @@ const styles = StyleSheet.create({
     textShadowRadius: 5, // Set text shadow radius
   },  
   paragraph: {
-    color: '#171717',
+    color: '#2E0E02',
     fontSize: 18,
     fontWeight: 'bold',
     textAlign: 'center',
