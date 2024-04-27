@@ -13,7 +13,7 @@ App Includes:
 
 
 - Database: Firebase:
-<img src="https://github.com/Denilz/CoffeeMod/assets/97263456/39fddd4d-2015-4b2a-ae86-e28773f46482" width="480" height="640" alt="User Authentication">
+<img src="https://github.com/Denilz/CoffeeMod/assets/97263456/39fddd4d-2015-4b2a-ae86-e28773f46482" width="800" height="480" alt="User Authentication">
 
 - Basic functioning as first feature of the app
 <img src="https://github.com/Denilz/CoffeeMod/assets/97263456/54003f6c-450e-4244-be68-17c985ed30cb" width="240" height="480" alt="User Authentication">
