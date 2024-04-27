@@ -6,8 +6,6 @@ each time you drink a coffee you enter the app and click on "+".
 That way you can track your daily coffee drinking intake,
 while making sure you're not exceeding your daily limit.
 
-<h2>Welcome to CoffeeMod!</h2>
-
 - **User Authentication** (Register/Login)
 - **Database**: Firebase
 - **Basic functioning** as first **feature** of the app
