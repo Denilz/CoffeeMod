@@ -9,11 +9,11 @@ while making sure you're not exceeding your daily limit.
 App Includes:
 
 - User Authentication (Register/Login):
-<img src="https://github.com/Denilz/CoffeeMod/assets/97263456/cea6ba63-592b-4e2e-90e3-6bf0f0cd3e7b" width="640" height="320" alt="User Authentication">
+<img src="https://github.com/Denilz/CoffeeMod/assets/97263456/cea6ba63-592b-4e2e-90e3-6bf0f0cd3e7b" width="640" height="120" alt="User Authentication">
 
 
 - Database: Firebase:
-<img src="https://github.com/Denilz/CoffeeMod/assets/97263456/39fddd4d-2015-4b2a-ae86-e28773f46482" width="640" height="320" alt="User Authentication">
+<img src="https://github.com/Denilz/CoffeeMod/assets/97263456/39fddd4d-2015-4b2a-ae86-e28773f46482" width="640" height="120" alt="User Authentication">
 
 - Basic functioning as first feature of the app
-<img src="https://github.com/Denilz/CoffeeMod/assets/97263456/54003f6c-450e-4244-be68-17c985ed30cb" width="640" height="320" alt="User Authentication">
+<img src="https://github.com/Denilz/CoffeeMod/assets/97263456/54003f6c-450e-4244-be68-17c985ed30cb" width="640" height="120" alt="User Authentication">
